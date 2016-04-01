@@ -44,3 +44,10 @@ func! SyntasticCheckCoffeescript()
     execute "Errors"
 endfunc
 nnoremap <silent> <leader>l :call SyntasticCheckCoffeescript()<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Fugitive (git wrapper)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Personal shortcut grep for all ocurrences of the current word in my git tree
+map <F4> :silent Ggrep <c-r><c-w> <bar> :copen <bar> :redraw!<cr>
