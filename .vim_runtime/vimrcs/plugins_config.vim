@@ -50,7 +50,7 @@ nnoremap <silent> <leader>l :call SyntasticCheckCoffeescript()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Personal shortcut grep for all ocurrences of the current word in my git tree
-map <F4> :silent Ggrep <c-r><c-w> -- './' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!<cr>
+map <F4> :silent Ggrep <c-r><c-w> -- './' ':(exclude)*.min.js' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!<cr>
 
 " alias default Ggrep to exclude files I rarely care about. Can still use default Ggrep to avoid this
-command -nargs=+ GG :silent Ggrep <args> -- './' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!
+command -nargs=+ GG :silent Ggrep <args> -- './' ':(exclude)*.min.js' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!
