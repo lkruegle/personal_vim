@@ -182,3 +182,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Show line numbers
 set nu
+
+" Tell my macbook to stop being stupid about copying text with a mouse
+set mouse=r
