@@ -33,7 +33,7 @@ map <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_python_checkers=['pylint', 'pep8']
 let g:syntastic_javascript_checkers = ['eslint']
 
 " Custom CoffeeScript SyntasticCheck
