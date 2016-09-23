@@ -34,6 +34,8 @@ map <leader>nf :NERDTreeFind<cr>
 " => Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers=['pylint', 'pep8']
+let g:syntastic_python_pep8_args = "--ignore=E4,E501"
+let g:syntastic_python_pylint_args = "--disable=F0401"
 let g:syntastic_javascript_checkers = ['eslint']
 
 " Custom CoffeeScript SyntasticCheck
