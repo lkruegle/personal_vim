@@ -184,5 +184,5 @@ set mouse=r
 
 " Use ripgrep for searching, if possible
 if executable('rg')
-  set grepprg=rg\ -i\ --vimgrep\ --ignore-file\ *.min.js\ *.mo\ *.po
+  set grepprg=rg\ -i\ --vimgrep\ --type-add\ 'i18n:*.{mo,po}'\ --type-add\ 'minjs:*.min.js'\ -Ti18n\ -Tminjs
 endif
