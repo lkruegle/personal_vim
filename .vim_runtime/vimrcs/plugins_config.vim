@@ -17,6 +17,10 @@ map <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
+" Use ripgrep, it's fast enough to not need caching
+let g:ctrlp_user_command = 'rg -l --files %s'
+let g:ctrlp_use_caching = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
@@ -46,15 +50,3 @@ func! SyntasticCheckCoffeescript()
     execute "Errors"
 endfunc
 nnoremap <silent> <leader>l :call SyntasticCheckCoffeescript()<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fugitive (git wrapper)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Personal shortcut grep for all ocurrences of the current word in my git tree
-map <F4> :silent Ggrep <c-r><c-w> -- './' ':(exclude)*.min.js' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!<cr>
-" copied, with naive go-to-definition logic for python
-map <F5> :silent Ggrep -e 'def <cword>(' -e 'class <cword>(' -- './' ':(exclude)*.min.js' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!<cr>
-
-" alias default Ggrep to exclude files I rarely care about. Can still use default Ggrep to avoid this
-command -nargs=+ GG :silent Ggrep <args> -- './' ':(exclude)*.min.js' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!

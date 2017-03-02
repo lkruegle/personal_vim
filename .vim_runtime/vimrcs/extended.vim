@@ -118,7 +118,6 @@ iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -145,3 +144,15 @@ endfunc
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Searching shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Personal shortcut grep for all ocurrences of the current word in my git tree
+map <F4> :silent grep <c-r><c-w> <bar> :copen <bar> :redraw!<cr>
+" copied, with naive go-to-definition logic for python
+map <F5> :silent grep -e 'def <cword>(' -e 'class <cword>(' <bar> :copen <bar> :redraw!<cr>
+
+" alias default grep to open how I like
+command -nargs=+ RG :silent grep <args> <bar> :copen <bar> :redraw!
