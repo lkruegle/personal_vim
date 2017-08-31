@@ -50,3 +50,6 @@ func! SyntasticCheckCoffeescript()
     execute "Errors"
 endfunc
 nnoremap <silent> <leader>l :call SyntasticCheckCoffeescript()<cr>
+
+" use locally installed eslint per-project
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
