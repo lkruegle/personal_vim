@@ -33,3 +33,6 @@ au FileType javascript inoremap <buffer> $f //--- PH ---------------------------
 
 " efischer custom coffeescript detection
 au BufRead,BufNewFile *.coffee setfiletype coffee
+
+" I also edit Markdown sometimes
+au BufNewFile,BufRead *.md setfiletype markdown
