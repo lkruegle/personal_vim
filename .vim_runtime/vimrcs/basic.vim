@@ -16,6 +16,10 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -181,8 +185,3 @@ set nu
 
 " Tell my macbook to stop being stupid about copying text with a mouse
 set mouse=r
-
-" Use ripgrep for searching, if possible
-if executable('rg')
-  set grepprg=rg\ -i\ --vimgrep\ --type-add\ 'i18n:*.{mo,po}'\ --type-add\ 'minjs:*.min.js'\ -Ti18n\ -Tminjs
-endif
