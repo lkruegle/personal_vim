@@ -65,12 +65,12 @@ command -nargs=+ GG :silent Ggrep <args> -- './' ':(exclude)*.min.js' ':(exclude
 " => Taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set updatetime=3000
+let Tlist_Auto_Open=1
 let Tlist_Compact_Format=1
 let Tlist_Enable_Fold_Column=0
 let Tlist_Exit_OnlyWindow=1
 let Tlist_File_Fold_Auto_Close=1
-let Tlist_Use_Right_Window = 1
-let Tlist_Auto_Open = 1
+let Tlist_Use_Right_Window=1
 map <silent> <Leader>tc :TlistClose<CR>
 map <silent> <Leader>to :TlistOpen<CR>
 
