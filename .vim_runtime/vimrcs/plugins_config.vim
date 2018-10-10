@@ -9,11 +9,10 @@ call pathogen#helptags()
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
-
 let g:ctrlp_map = '<c-f>'
-map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
-
+let g:ctrlp_extensions = ['tag']
+map <leader>. :CtrlPTag<cr>
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
@@ -61,3 +60,18 @@ map <F5> :silent Ggrep -e 'def <cword>(' -e 'class <cword>(' -- './' ':(exclude)
 
 " alias default Ggrep to exclude files I rarely care about. Can still use default Ggrep to avoid this
 command -nargs=+ GG :silent Ggrep <args> -- './' ':(exclude)*.min.js' ':(exclude)*.mo' ':(exclude)*.po' <bar> :copen <bar> :redraw!
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Taglist
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set updatetime=3000
+let Tlist_Compact_Format=1
+let Tlist_Enable_Fold_Column=0
+let Tlist_Exit_OnlyWindow=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_Use_Right_Window = 1
+let Tlist_Auto_Open = 1
+map <silent> <Leader>tc :TlistClose<CR>
+map <silent> <Leader>to :TlistOpen<CR>
+
+map <F3> :tab tselect <c-r><c-w><cr>
