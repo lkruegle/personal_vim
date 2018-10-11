@@ -70,7 +70,7 @@ let Tlist_Compact_Format=1
 let Tlist_Enable_Fold_Column=0
 let Tlist_Exit_OnlyWindow=1
 let Tlist_File_Fold_Auto_Close=1
-let Tlist_Use_Right_Window=1
+let Tlist_Use_Horiz_Window=1
 map <silent> <Leader>tc :TlistClose<CR>
 map <silent> <Leader>to :TlistOpen<CR>
 
