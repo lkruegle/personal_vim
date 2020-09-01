@@ -1,3 +1,21 @@
+" efischer - copied this top bit from https://vi.stackexchange.com/questions/11892/populate-a-git-commit-template-with-variables
+" specific to catalant!
+function! s:expand_pr_template() abort
+  let context = {
+        \ 'MY_BRANCH': matchstr(system('git rev-parse --abbrev-ref HEAD'), '\p\+'),
+        \ 'MY_BRANCH_SHORT': matchstr(system('git rev-parse --abbrev-ref HEAD'), '[^/]\+'),
+        \ }
+
+  let lnum = nextnonblank(1)
+  while lnum && lnum < line('$')
+    call setline(lnum, substitute(getline(lnum), '\${\(\w\+\)}',
+          \ '\=get(context, submatch(1), submatch(0))', 'g'))
+    let lnum = nextnonblank(lnum + 1)
+  endwhile
+endfunction
+
+autocmd BufRead */.git/PULLREQ_EDITMSG call s:expand_pr_template()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Important: 
 "       This requries that you install https://github.com/amix/vimrc !
