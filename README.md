@@ -1,4 +1,4 @@
-If you can see this, you can use it, I don't care.
+If you can see this, you can use it, I don't care. (I'm going to, thanks)
 
 My personal vim configuration, largely stored here so I can keep it synchronized across machines.
 
